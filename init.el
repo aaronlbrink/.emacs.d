@@ -167,7 +167,7 @@
 ;; https://github.com/enisozgen/idle-org-agenda
 (use-package idle-org-agenda
   :after org-agenda
-x  :ensure t
+  :ensure t
   :config (idle-org-agenda-mode))
 
 
@@ -358,7 +358,7 @@ x  :ensure t
     `(company-tooltip-selection ((t (:inherit font-lock-function-name-face))))
     `(company-tooltip-common ((t (:inherit font-lock-constant-face))))))
 
-Don't show welcome screen
+;; Don't show welcome screen
 (setq initial-scratch-message "Hi, Aaron!")
 
 
