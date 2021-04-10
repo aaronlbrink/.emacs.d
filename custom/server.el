@@ -67,10 +67,11 @@
   (progn (setq-default flycheck-emacs-lisp-load-path 'inherit))
   )
 
+;; Not currently working on a Debian server, a quick comment out.
 ;; Display fly-check messages inline with code
-(use-package flycheck-inline
-  :config
-  (with-eval-after-load 'flycheck (global-flycheck-inline-mode)))
+;;(use-package flycheck-inline
+;;  :config
+;;  (with-eval-after-load 'flycheck (global-flycheck-inline-mode)))
 
 
 ;; M-x enhancement
@@ -93,56 +94,66 @@
   )
 
 
+;; Not currently working on a Debian server, quick comment out.
 ;; Client for Language Server Protocol
 ;; Adds support for LSP and trys to provide an IDE-like experience with optional integration
 ;; ability with the popular company, flycheck, and projectile packages.
 ;; https://github.com/emacs-lsp/lsp-mode
-(use-package lsp-mode
-  :hook
-  ((prog-major-mode . lsp-prog-major-mode-enable)
-    (lsp-after-open-hook . lsp-enable-imenu)
-    (prog-mode . lsp))
-  :config
-  (setq
-    lsp-enable-snippet nil))
+;;(use-package lsp-mode
+;;  :hook
+;;  ((prog-major-mode . lsp-prog-major-mode-enable)
+;;    (lsp-after-open-hook . lsp-enable-imenu)
+;;    (prog-mode . lsp))
+;;  :config
+;;  (setq
+;;    lsp-enable-snippet nil))
 
 ;; LSP UI stuff. See how to configure useful things:
 ;; https://emacs-lsp.github.io/lsp-ui/
-(use-package lsp-ui
-  :config
-  (setq lsp-ui-doc-enable nil
-      lsp-ui-peek-enable nil
-      lsp-ui-sideline-enable nil
-      lsp-ui-imenu-enable nil
-      lsp-ui-flycheck-enable t)
-  :hook
-  (lsp-mode . lsp-ui-mode))
+;;(use-package lsp-ui
+;;  :config
+;;  (setq lsp-ui-doc-enable nil
+;;      lsp-ui-peek-enable nil
+;;      lsp-ui-sideline-enable nil
+;;      lsp-ui-imenu-enable nil
+;;      lsp-ui-flycheck-enable t)
+;;  :hook
+;;  (lsp-mode . lsp-ui-mode))
 
-
+;; Not installing correctly on a Debian server, quick comment out
 ;; Company completion backend for lsp-mode
 ;; Provides some things like using "." to trigger completion.
 ;; I need to invest sometime to understand how the LSP framework actually works to really
 ;; understand the necessity of this package.
 ;; https://github.com/tigersoldier/company-lsp
-(use-package company-lsp)
+;; (use-package company-lsp)
   
 
+;; Not loading correctly on a Debian server, quick comment out
 ;; Project interaction library
 ;; Provides navigation and management features on the project-level. If a directory has
 ;; a .git directory, then it's a project. Somethings you can do: find files in project,
 ;; visit project in dired, jump to recently visited files in project,
 ;; https://github.com/bbatsov/projectile
-(use-package projectile
-  :config
-  (projectile-mode 1)
-  :ensure t
-  :bind-keymap (("C-c p" . projectile-command-map))
-)
+;;(use-package projectile
+;;  :config
+;;  (projectile-mode 1)
+;;  :ensure t
+;;  :bind-keymap (("C-c p" . projectile-command-map))
+;;)
+
 ;;(setq projectile-project-search-path '("/home/aaron/ldev/personal" "/home/aaron/ldev/brinkdevelopmentllc/kyros/"))
 
 
 ;; Web Development Stuff
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js-mode))
+
+;;
+;; UNIQUE TO SERVER CUSTOM CONFIG
+;;
+
+;; Use nginx-mode
+(use-package nginx-mode)
 
 ;;
 ;; --- Theming ---
