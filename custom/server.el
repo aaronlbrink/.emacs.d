@@ -80,18 +80,19 @@
 (use-package smex)
 
 
+;; Not currently working on a Debian server, quick comment out.
 ;; Simple tools for minibuffer completion
 ;; Ivy includes 3 subparts: Ivy itself (list completion), Counsel (Ivy-enhanced versions
 ;; of common Emacs commands, and Swiper (Ivy-enhanced alternative to isearch)
 ;; https://github.com/abo-abo/swiper (includes all 3)
-(use-package ivy
-  :config
-  (ivy-mode 1)
-  :bind* (
-     ("\C-s" . swiper)
-     ("M-x"     . counsel-M-x)       ; M-x use counsel
-     ("C-x C-f" . counsel-find-file)) ; C-x C-f use counsel-find-file
-  )
+;;(use-package ivy
+;;  :config
+;;  (ivy-mode 1)
+;;  :bind* (
+;;     ("\C-s" . swiper)
+;;     ("M-x"     . counsel-M-x)       ; M-x use counsel
+;;     ("C-x C-f" . counsel-find-file)) ; C-x C-f use counsel-find-file
+;;  )
 
 
 ;; Not currently working on a Debian server, quick comment out.
